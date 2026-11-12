@@ -21,7 +21,7 @@
 ---
 
 ## 🚀 2. Topik & Cara Menjalankan Program
-- **Topik:** Sistem Pakar Penentuan Potensi Energi Terbarukan (Di luar bidang kesehatan).
+- **Topik:** Sistem Pakar Penentuan Potensi Energi Terbarukan .
 - **Bahasa & Versi:** Python (versi terbaru)
 - **Cara Menjalankan Program:**
   1. Pastikan file basis pengetahuan (`kb_energi.json` atau file aturan) dan program utama (`main.py`) berada dalam satu folder yang sama.

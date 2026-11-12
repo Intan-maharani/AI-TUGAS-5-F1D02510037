@@ -1,0 +1,52 @@
+{
+  "catatan": "Kasus uji ini dapat dimasukkan dengan menjawab ya hanya pada fakta yang tercantum.",
+  "kasus_uji": [
+    {
+      "nama": "Kasus 1 - Surya",
+      "fakta_ya": [
+        "radiasi_matahari_tinggi",
+        "lahan_terbuka"
+      ],
+      "kesimpulan_diharapkan": [
+        "rekomendasi_surya"
+      ],
+      "aturan_diharapkan": [
+        "R1",
+        "R2"
+      ]
+    },
+    {
+      "nama": "Kasus 2 - Hidro",
+      "fakta_ya": [
+        "aliran_air_stabil",
+        "beda_ketinggian_air"
+      ],
+      "kesimpulan_diharapkan": [
+        "rekomendasi_hidro"
+      ],
+      "aturan_diharapkan": [
+        "R5",
+        "R6"
+      ]
+    },
+    {
+      "nama": "Kasus 3 - Angin dan biomassa",
+      "fakta_ya": [
+        "angin_kencang",
+        "area_terbuka_angin",
+        "limbah_organik_tersedia",
+        "pengumpulan_limbah_teratur"
+      ],
+      "kesimpulan_diharapkan": [
+        "rekomendasi_angin",
+        "rekomendasi_biomassa"
+      ],
+      "aturan_diharapkan": [
+        "R3",
+        "R4",
+        "R7",
+        "R8"
+      ]
+    }
+  ]
+}

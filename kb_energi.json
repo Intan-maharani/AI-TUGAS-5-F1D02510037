@@ -1,0 +1,190 @@
+{
+  "judul": "Sistem Pakar Pemilihan Energi Terbarukan Berdasarkan Kondisi Lingkungan",
+  "deskripsi": "Basis pengetahuan sederhana untuk memberi rekomendasi awal jenis energi terbarukan berdasarkan fakta kondisi lingkungan.",
+  "metode": "Forward Chaining",
+  "mode_default": "dan",
+  "batas": "Hasil merupakan rekomendasi awal untuk pembelajaran, bukan studi kelayakan teknis, ekonomi, lingkungan, atau keputusan pembangunan.",
+  "sumber": {
+    "S1": {
+      "judul": "Miliki Potensi EBT 3.686 GW, Sekjen Rida: Modal Utama Jalankan Transisi Energi Indonesia",
+      "penerbit": "Kementerian Energi dan Sumber Daya Mineral Republik Indonesia",
+      "url": "https://www.esdm.go.id/en/media-center/news-archives/miliki-potensi-ebt-3686-gw-sekjen-rida-modal-utama-jalankan-transisi-energi-indonesia",
+      "tanggal_akses": "2026-11-12",
+      "digunakan_untuk": "Jenis sumber energi terbarukan yang tersedia di Indonesia: surya, angin, bioenergi, hidro, panas bumi, dan energi laut."
+    },
+    "S2": {
+      "judul": "Renewable energy explained: types and usage",
+      "penerbit": "U.S. Energy Information Administration",
+      "url": "https://www.eia.gov/energyexplained/renewable-sources/types-and-usage.php",
+      "tanggal_akses": "2026-11-12",
+      "digunakan_untuk": "Prinsip pemanfaatan energi surya, tenaga air, panas bumi, angin, dan biomassa."
+    },
+    "S3": {
+      "judul": "Renewable and low carbon energy – technical considerations relating to siting",
+      "penerbit": "UK Government",
+      "url": "https://www.gov.uk/guidance/renewable-and-low-carbon-energy",
+      "tanggal_akses": "2026-11-12",
+      "digunakan_untuk": "Pertimbangan lokasi: sumber air untuk hidro, sumber angin, serta akses transportasi untuk biomassa."
+    },
+    "S4": {
+      "judul": "Geothermal FAQs",
+      "penerbit": "U.S. Department of Energy",
+      "url": "https://www.energy.gov/hgeo/geothermal/geothermal-faqs",
+      "tanggal_akses": "2026-11-12",
+      "digunakan_untuk": "Karakteristik lokasi panas bumi, fluida panas bawah permukaan, dan kedekatan dengan jaringan transmisi atau beban."
+    }
+  },
+  "pertanyaan": [
+    {
+      "id": "radiasi_matahari_tinggi",
+      "teks": "Apakah wilayah mendapatkan sinar matahari yang melimpah?"
+    },
+    {
+      "id": "lahan_terbuka",
+      "teks": "Apakah tersedia lahan atau atap terbuka untuk panel surya?"
+    },
+    {
+      "id": "angin_kencang",
+      "teks": "Apakah kecepatan angin di wilayah tersebut cukup kuat dan konsisten?"
+    },
+    {
+      "id": "area_terbuka_angin",
+      "teks": "Apakah tersedia area terbuka yang sesuai untuk turbin angin?"
+    },
+    {
+      "id": "aliran_air_stabil",
+      "teks": "Apakah terdapat aliran sungai atau sumber air yang stabil?"
+    },
+    {
+      "id": "beda_ketinggian_air",
+      "teks": "Apakah lokasi memiliki perbedaan ketinggian atau kondisi aliran yang dapat dimanfaatkan?"
+    },
+    {
+      "id": "limbah_organik_tersedia",
+      "teks": "Apakah tersedia limbah organik atau residu pertanian/peternakan dalam jumlah memadai?"
+    },
+    {
+      "id": "pengumpulan_limbah_teratur",
+      "teks": "Apakah limbah organik dapat dikumpulkan dan diangkut secara teratur?"
+    },
+    {
+      "id": "indikasi_panas_bumi",
+      "teks": "Apakah terdapat indikasi geologi panas bumi berdasarkan data/pemetaan resmi wilayah?"
+    },
+    {
+      "id": "akses_jaringan_listrik",
+      "teks": "Apakah lokasi relatif memungkinkan terhubung ke jaringan listrik atau pusat kebutuhan energi?"
+    }
+  ],
+  "aturan": [
+    {
+      "id": "R1",
+      "jika": [
+        "radiasi_matahari_tinggi"
+      ],
+      "mode": "dan",
+      "maka": "potensi_surya",
+      "sumber": "S1"
+    },
+    {
+      "id": "R2",
+      "jika": [
+        "potensi_surya",
+        "lahan_terbuka"
+      ],
+      "mode": "dan",
+      "maka": "rekomendasi_surya",
+      "sumber": "S2"
+    },
+    {
+      "id": "R3",
+      "jika": [
+        "angin_kencang"
+      ],
+      "mode": "dan",
+      "maka": "potensi_angin",
+      "sumber": "S1"
+    },
+    {
+      "id": "R4",
+      "jika": [
+        "potensi_angin",
+        "area_terbuka_angin"
+      ],
+      "mode": "dan",
+      "maka": "rekomendasi_angin",
+      "sumber": "S3"
+    },
+    {
+      "id": "R5",
+      "jika": [
+        "aliran_air_stabil"
+      ],
+      "mode": "dan",
+      "maka": "potensi_hidro",
+      "sumber": "S1"
+    },
+    {
+      "id": "R6",
+      "jika": [
+        "potensi_hidro",
+        "beda_ketinggian_air"
+      ],
+      "mode": "dan",
+      "maka": "rekomendasi_hidro",
+      "sumber": "S3"
+    },
+    {
+      "id": "R7",
+      "jika": [
+        "limbah_organik_tersedia"
+      ],
+      "mode": "dan",
+      "maka": "potensi_biomassa",
+      "sumber": "S1"
+    },
+    {
+      "id": "R8",
+      "jika": [
+        "potensi_biomassa",
+        "pengumpulan_limbah_teratur"
+      ],
+      "mode": "dan",
+      "maka": "rekomendasi_biomassa",
+      "sumber": "S3"
+    },
+    {
+      "id": "R9",
+      "jika": [
+        "indikasi_panas_bumi"
+      ],
+      "mode": "dan",
+      "maka": "potensi_geotermal",
+      "sumber": "S1"
+    },
+    {
+      "id": "R10",
+      "jika": [
+        "potensi_geotermal",
+        "akses_jaringan_listrik"
+      ],
+      "mode": "dan",
+      "maka": "rekomendasi_geotermal",
+      "sumber": "S4"
+    }
+  ],
+  "kesimpulan": {
+    "rekomendasi_surya": "Energi surya (PLTS) berpotensi dipertimbangkan.",
+    "rekomendasi_angin": "Energi angin (PLTB) berpotensi dipertimbangkan.",
+    "rekomendasi_hidro": "Energi air (PLTA/PLTMH) berpotensi dipertimbangkan.",
+    "rekomendasi_biomassa": "Energi biomassa berpotensi dipertimbangkan.",
+    "rekomendasi_geotermal": "Energi panas bumi (geotermal) berpotensi dipertimbangkan."
+  },
+  "nama_fakta": {
+    "potensi_surya": "potensi sumber surya teridentifikasi",
+    "potensi_angin": "potensi sumber angin teridentifikasi",
+    "potensi_hidro": "potensi sumber air teridentifikasi",
+    "potensi_biomassa": "potensi bahan baku biomassa teridentifikasi",
+    "potensi_geotermal": "indikasi potensi panas bumi teridentifikasi"
+  }
+}

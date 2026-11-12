@@ -15,7 +15,7 @@
 | Atribut | Keterangan |
 | :--- | :--- |
 | **Nama Lengkap** | Anak Agung Ayu Intan Putri Maharani |
-| **NIM** | `F1D02510037` |
+| **NIM** | F1D02510037 |
 | **Mata Kuliah / Tugas** | Sistem Pakar (Pencarian *Forward Chaining*) |
 
 ---

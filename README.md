@@ -3,9 +3,6 @@
 # 🌿 Sistem Pakar Pemilihan Energi Terbarukan
 ### Berdasarkan Kondisi Lingkungan Menggunakan Metode *Forward Chaining*
 
-[![Python](https://img.shields.io/badge/Python-3.x-blue.svg?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![License: MIT](https://img.shields.io/badge/License-Academic-green.svg?style=for-the-badge)]()
-[![Status](https://img.shields.io/badge/Status-Completed-success.svg?style=for-the-badge)]()
 
 </div>
 
